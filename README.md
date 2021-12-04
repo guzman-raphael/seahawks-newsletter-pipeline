@@ -1,7 +1,6 @@
 # seahawks
-Bootcamp with Raphael
 
-What I should Gain
+## What I should Gain
 - [ ] Fundamentals of shell scripting 
 - [ ] Fundamentals of debugging 
 - [x] Fundamentals of Docker
@@ -29,3 +28,10 @@ We’re working for Memorial university. Our mission is to get people excited to
 - [ ] Figure out how to transform them
     - [ ] Use datajoint to retrieve and interact with database via ipython 
     - [ ] Transform images inside a Jupyter notebook 
+
+## Tasks: 
+- [ ] Task 1- Have a development environment up to Docker File (include: GitHub repo, local repo, docker file, database configured, virtual environment, iypthon, Jupyter) 
+- [ ] Task 2.1- Designing the pipeline 
+- [ ] Task 2.2- Ingest manual data 
+- [ ] Task 2.3- Ingest image data
+- [ ] Task 2.4- process painting data
