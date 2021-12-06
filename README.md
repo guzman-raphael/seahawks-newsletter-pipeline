@@ -12,7 +12,7 @@
 
 ## Project description
 
-We’re working for Memorial university. Our mission is to get people excited to come to Seahawks’ basketball games. To do this, we will take pictures from the Seahawks basketball page and change them to look like paintings. 
+We are working for Memorial university. Our mission is to get people excited to come to Seahawks’ basketball games. To do this, we will take pictures from the Seahawks basketball page and change them to look like paintings. 
 
 
 ## Brainstorm:
