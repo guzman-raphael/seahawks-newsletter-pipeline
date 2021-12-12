@@ -20,7 +20,7 @@ We are working for Memorial university. Our mission is to get people excited to 
     - [x] In GitHub initialize a repo
     - [x] Git set up locally with vscode 
     - [x] Vscode will be used for debugging from now on 
-- [] Dockerize the pipeline 
+- [ ] Dockerize the pipeline 
 - [x] Figure out which pictures we’ll use 
 - [x] Figure out how to access the pictures and download 
     - [ ] Store the images in a database 
