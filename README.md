@@ -16,22 +16,24 @@ We’re working for Memorial university. Our mission is to get people excited to
 
 
 ## Brainstorm:
-- [ ] Initialize a repo seahawks-newsletter-pipeline and clone it to my local machine 
-    - [ ] In GitHub initialize a repo
-    - [ ] Git set up locally with vscode 
-    - [ ] Vscode will be used for debugging from now on 
-- [ ] Dockerize the pipeline 
-- [ ] Figure out which pictures we’ll use 
-- [ ] Figure out how to access the pictures and download 
-    - [ ] Use Web-scraping to get pictures
+- [x] Initialize a repo seahawks-newsletter-pipeline and clone it to my local machine 
+    - [x] In GitHub initialize a repo
+    - [x] Git set up locally with vscode 
+    - [x] Vscode will be used for debugging from now on 
+- [] Dockerize the pipeline 
+- [x] Figure out which pictures we’ll use 
+- [x] Figure out how to access the pictures and download 
     - [ ] Store the images in a database 
 - [ ] Figure out how to transform them
     - [ ] Use datajoint to retrieve and interact with database via ipython 
     - [ ] Transform images inside a Jupyter notebook 
 
 ## Tasks: 
-- [ ] Task 1- Have a development environment up to Docker File (include: GitHub repo, local repo, docker file, database configured, virtual environment, iypthon, Jupyter) 
-- [ ] Task 2.1- Designing the pipeline 
+- [x] Task 1- Have a development environment up to Docker File (include: GitHub repo, local repo, docker file, database configured, virtual environment, iypthon, Jupyter, dj_local_config) 
+- [ ] Task 2.1- Design the pipeline 
+    - [x] Design tables
+    - [ ] Design the make functions
+    - [ ] Test the pipeline 
 - [ ] Task 2.2- Ingest manual data 
 - [ ] Task 2.3- Ingest image data
 - [ ] Task 2.4- process painting data
