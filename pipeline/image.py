@@ -1,7 +1,15 @@
 from collections import defaultdict
+import os
 import datajoint as dj 
+from skimage import io
 
 schema = dj.schema(dj.config['custom']['database.prefix'] + 'image')
+
+# === Useful functions===
+def get_image_paths():
+    paths = dj.config.get('custom', {}).get('image_root_data_dir',None)
+    return paths
+
 
 @schema
 class ImageInfo(dj.Manual):
@@ -9,8 +17,9 @@ class ImageInfo(dj.Manual):
     #Image information
     image_id   : varchar(24)  #name of image
     ---
-    filepath   : varchar(50)  #image location
+    filepath   : varchar(50)  #image location relative to image_root_data_dir
     """
+
 
 @schema
 class Image(dj.Imported):
@@ -18,11 +27,19 @@ class Image(dj.Imported):
     #Image
     -> ImageInfo
     ---
-    image: blob #the image itself
+    image  : longblob   #the image itself
     """
 
     def make(self,key):
-        print(key)
+        #to do join filepath and 
+        dirname = get_image_paths()
+        filepath = (ImageInfo & key).fetch1('filepath')
+        full_file_path = os.path.join(dirname, filepath)
+        image = io.imread(full_file_path)
+        
+        key['image'] = image
+        self.insert1(key)
+
 
 @schema
 class TransformedImage(dj.Computed):
