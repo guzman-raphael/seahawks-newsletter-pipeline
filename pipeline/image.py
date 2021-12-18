@@ -1,7 +1,7 @@
 from collections import defaultdict
 import os
 import datajoint as dj 
-from skimage import io
+from skimage import io, util
 
 schema = dj.schema(dj.config['custom']['database.prefix'] + 'image')
 
@@ -47,5 +47,10 @@ class TransformedImage(dj.Computed):
     #The transformed image
     -> Image
     ---
-    transformed_image : blob  #new image
+    transformed_image : longblob  #new image
     """
+    def make(self,key):
+        image = (Image & key).fetch1('image')
+        inverted_image = util.invert(image)
+        key['transformed_image'] = inverted_image
+        self.insert1(key)
