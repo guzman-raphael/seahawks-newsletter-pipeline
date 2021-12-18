@@ -1,8 +1,24 @@
-FROM ubuntu:jammy 
+FROM datajoint/pydev:python3.6
+
+RUN apt update && apt -y install mysql-client-5.7 netcat
+
 ENV TEAM="Seahawks"
-COPY ./README.md /home/ubuntu/files/README.md
-ADD https://raw.githubusercontent.com/datajoint/datajoint-python/master/CHANGELOG.md /home/ubuntu/files/CHANGELOG.md
-RUN echo HEY! > /home/ubuntu/files/file1.txt
-USER games:games
+
+#RUN apt update && apt -y install mysql-client-5.7 netcat
+
+RUN mkdir /seahawks
+
+WORKDIR /seahawks
+
+RUN git clone https://github.com/davidgodinez/seahawks-newsletter-pipeline.git /seahawks
+
+RUN pip install --upgrade pip && pip install . 
+
+RUN pip insall -r requirements.txt
+
+COPY ./dj_local_conf.json /seahawks/dj_local_conf.json
+
 ENTRYPOINT ["bash", "-c"]
+
 CMD ["tail -f /dev/null"] 
+
